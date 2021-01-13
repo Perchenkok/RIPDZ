@@ -1,0 +1,29 @@
+
+{% extends 'inc/base.html' %}
+{% block navbar %}
+{% include 'inc/navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+{% if allqs %}
+<div class = otstup>
+{% for qn in allqs %}
+
+    <div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+            <div class = "formQ">
+                <a class="que" href="{% url 'question' qn.id %}">{{ qn.title }}</a>
+            </div>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+    </div>
+
+
+{% endfor %}
+</div>
+{% endif %}
+{% endblock content %}
